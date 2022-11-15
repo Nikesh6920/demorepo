@@ -30,7 +30,6 @@ jobs:
       uses: juliangruber/read-file-action@v1.1.6
       with:
         path: README.md
-        run: echo README.md
            
 #    - name: Veracode Upload And Scan
 #      uses: veracode/veracode-uploadandscan-action@0.2.1
