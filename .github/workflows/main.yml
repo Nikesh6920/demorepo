@@ -1,8 +1,17 @@
 name: Simple Test Workflow
 on: 
+  workflow_call:
+    inputs:
+      repoName:
+        description: "Repository Name"
+        required: true
+        type: string
+      path:
+        description: "Folder Name"
+        required: true
+        type: string
   push:
-  pull_request:
-  
+  pull_request:  
 
 jobs:
   build:
@@ -11,6 +20,9 @@ jobs:
     steps:
     - name: Git Checkout
       uses: actions/checkout@v3
+      with: 
+        repository: ${{ inputs.repoName }}
+        path: ${{ inputs.path }}
 #     - uses: ./.github/actions/checkout-action
 
     - name: Set up JDK 11
