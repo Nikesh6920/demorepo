@@ -1,6 +1,6 @@
 name: Simple Test Workflow
 on: 
-  workflow_call:
+  workflow_dispatch:
     inputs:
       repoName:
         description: "Repository Name"
@@ -10,8 +10,8 @@ on:
         description: "Folder Name"
         required: true
         type: string
-  push:
-  pull_request:  
+#  push:
+#  pull_request:  
 
 jobs:
   build:
