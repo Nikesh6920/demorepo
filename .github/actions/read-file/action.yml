@@ -16,8 +16,5 @@ runs:
       shell: bash
     - id: file-contents
       run: |
-            file="${{ inputs.fileName }}"
-            while read -r line; do
-              echo -e "$line\n"
-            done <$file 
+            cat ${{ inputs.fileName }}
       shell: bash
