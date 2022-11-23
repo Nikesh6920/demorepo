@@ -41,14 +41,15 @@ jobs:
     - name: Build with Maven
       run: |
           cd ${{ inputs.path }}
-          ls -a
           mvn -B package --file pom.xml
           cd target && ls
+          cd.. && ls -a
+          cd .github/actions/read-file && ls -a
 
-    - name: Reading the spec file
-      uses: ./.github/actions/read-file
-      with:
-        fileName: "README.md"
+#    - name: Reading the spec file
+#      uses: ./.github/actions/read-file
+#      with:
+#        fileName: "README.md"
  
            
 #    - name: Veracode Upload And Scan
