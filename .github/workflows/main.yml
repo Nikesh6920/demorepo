@@ -45,7 +45,7 @@ jobs:
           cd target && ls
 
     - name: Reading the spec file
-      uses: ./.github/actions/read-file/
+      uses: ./.github/actions/read-file
       with:
         fileName: "README.md"
  
