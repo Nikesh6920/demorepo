@@ -15,7 +15,5 @@ runs:
     - run: echo Reading ${{ inputs.fileName }}...
       shell: bash
     - id: file-contents
-      run: |
-            export read=$(while IFS= read -r line; do echo "$line"; done < "${{ inputs.fileName }}")
-            echo $read
+      run: cat README.md >> $GITHUB_OUTPUT
       shell: bash
