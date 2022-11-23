@@ -15,5 +15,10 @@ runs:
     - run: echo Reading ${{ inputs.fileName }}...
       shell: bash
     - id: file-contents
-      run: echo "cat ${{ inputs.fileName }}" >> $GITHUB_OUTPUT
+      run: |
+            input = ${{ inputs.fileName }}
+            while read -r line
+            do
+              echo "$line"
+            done < "$input" >> $GITHUB_OUTPUT
       shell: bash
