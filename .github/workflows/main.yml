@@ -1,19 +1,5 @@
 name: Simple Test Workflow
-on: 
-  workflow_dispatch:
-    inputs:
-      repoName:
-        description: "Repository Name"
-        required: true
-        type: string
-      branchName:
-        description: "branch Name"
-        required: true
-        type: string
-      path:
-        description: "Folder Name"
-        required: true
-        type: string
+on: workflow_dispatch
 #  push:
 #  pull_request:  
 
@@ -24,10 +10,6 @@ jobs:
     steps:
     - name: Git Checkout
       uses: actions/checkout@v3
-      with: 
-        repository: ${{ inputs.repoName }}
-        ref: ${{ inputs.branchName }}
-        path: ${{ inputs.path }}
 #     - uses: ./.github/actions/checkout-action
 
     - name: Set up JDK 11
@@ -47,9 +29,9 @@ jobs:
           cd .github/actions/read-file && ls -a
 
     - name: Reading the spec file
-      uses: demorepo/read-file@master
-      with:
-        fileName: "README.md"
+      uses: ./.github/actions/read-file
+#      with:
+#        fileName: "README.md"
  
            
 #    - name: Veracode Upload And Scan
