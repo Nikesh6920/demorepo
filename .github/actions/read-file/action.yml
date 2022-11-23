@@ -1,0 +1,24 @@
+name: 'Read Files'
+description: 'Read Yaml Files'
+inputs:
+  fileName:  # id of input
+    description: 'File Name'
+    required: true
+    default: 'index.html'
+outputs:
+  fileContent:
+    description: "File Content"
+    value: ${{ steps.file-contents.outputs }}
+runs:
+  using: "composite"
+  steps:
+    - run: echo Reading ${{ inputs.fileName }}...
+      shell: bash
+    - id: file-contents
+      run: |
+            file=$(cat ${{ inputs.fileName }})
+            for line in $file
+            do
+              echo -e "$line\n"
+            done
+      shell: bash
