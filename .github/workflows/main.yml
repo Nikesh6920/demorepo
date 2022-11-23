@@ -44,7 +44,7 @@ jobs:
           mvn -B package --file pom.xml
           cd target && ls
           cd .. && ls -a
-          cd .github && ls -a
+          cd .github/actions && ls -a
 
 #    - name: Reading the spec file
 #      uses: actions/read-file@master
