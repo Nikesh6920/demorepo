@@ -30,7 +30,7 @@ jobs:
     - name: Reading the spec file
       uses: ./.github/actions/read-file
       with:
-        fileName: "README.md"
+        fileName: ".travis.yml"
  
            
 #    - name: Veracode Upload And Scan
