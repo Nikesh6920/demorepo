@@ -12,8 +12,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo "Reading ${{ inputs.fileName }}..."
-      shell: bash
     - id: file-contents
-      run: echo "Reading....." >> $GITHUB_OUTPUT
+      run: echo "Reading ${{ inputs.fileName }}..."
       shell: bash
+      
