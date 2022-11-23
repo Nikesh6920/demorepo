@@ -12,8 +12,8 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Reading ${{ inputs.fileName }}...
+    - run: echo "Reading ${{ inputs.fileName }}..."
       shell: bash
     - id: file-contents
-      run: cat README.md >> $GITHUB_OUTPUT
+      run: echo "Reading....." >> $GITHUB_OUTPUT
       shell: bash
