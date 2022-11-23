@@ -29,8 +29,8 @@ jobs:
 
     - name: Reading the spec file
       uses: ./.github/actions/read-file
-#      with:
-#        fileName: "README.md"
+      with:
+        fileName: "README.md"
  
            
 #    - name: Veracode Upload And Scan
