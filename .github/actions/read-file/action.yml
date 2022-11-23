@@ -8,7 +8,7 @@ inputs:
 outputs:
   fileContent:
     description: "File Content"
-    value: ${{ steps.file-contents.outputs }}
+    value: ${{ steps.file-contents.outputs.file }}
 runs:
   using: "composite"
   steps:
@@ -16,5 +16,5 @@ runs:
       shell: bash
     - id: file-contents
       run: |
-            cat ${{ inputs.fileName }}
+            echo "file=$(cat ${{ inputs.fileName }})" >> $GITHUB_OUTPUT
       shell: bash
