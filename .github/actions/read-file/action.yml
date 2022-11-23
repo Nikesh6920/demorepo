@@ -8,13 +8,12 @@ inputs:
 outputs:
   fileContent:
     description: "File Content"
-    value: ${{ steps.file-contents.outputs.file }}
+    value: ${{ steps.file-contents.outputs }}
 runs:
   using: "composite"
   steps:
     - run: echo Reading ${{ inputs.fileName }}...
       shell: bash
     - id: file-contents
-      run: |
-            echo "file=$(cat ${{ inputs.fileName }})" >> $GITHUB_OUTPUT
+      run: cat ${{ inputs.fileName }} >> $GITHUB_OUTPUT
       shell: bash
