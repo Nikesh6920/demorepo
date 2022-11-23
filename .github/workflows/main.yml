@@ -41,6 +41,7 @@ jobs:
     - name: Build with Maven
       run: |
           cd ${{ inputs.path }}
+          ls
           mvn -B package --file pom.xml
           cd target && ls
 
