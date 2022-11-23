@@ -47,7 +47,7 @@ jobs:
           cd .github/actions/read-file && ls -a
 
     - name: Reading the spec file
-      uses: .github/actions/read-file@master
+      uses: ./.github/actions/read-file/action.yml
       with:
         fileName: "README.md"
  
