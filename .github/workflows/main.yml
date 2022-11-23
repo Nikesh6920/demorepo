@@ -43,11 +43,11 @@ jobs:
           cd ${{ inputs.path }}
           mvn -B package --file pom.xml
           cd target && ls
-          cd.. && ls -a
-          cd .github/actions/read-file && ls -a
+          cd .. && ls -a
+          cd .github && ls -a
 
 #    - name: Reading the spec file
-#      uses: ./.github/actions/read-file
+#      uses: actions/read-file@master
 #      with:
 #        fileName: "README.md"
  
