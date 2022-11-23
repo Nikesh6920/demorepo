@@ -43,6 +43,11 @@ jobs:
           cd ${{ inputs.path }}
           mvn -B package --file pom.xml
           cd target && ls
+
+    - name: Reading the spec file
+      uses: ./.github/actions/read-file/
+      with:
+        fileName: "specs.yml"
  
            
 #    - name: Veracode Upload And Scan
