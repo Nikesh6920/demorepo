@@ -26,6 +26,7 @@ jobs:
           cd .github/workflows && ls -a
 
   LoadSpecFile:
+    needs: [build]
     uses: Nikesh6920/demorepo/.github/workflows/readFile.yml@master
     with:
       gitRepo: ${{ github.repository }}
