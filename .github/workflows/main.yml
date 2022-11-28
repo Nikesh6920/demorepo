@@ -24,6 +24,14 @@ jobs:
           cd target && ls
           cd .. && ls -a
           cd .github/workflows && ls -a
+    - name: Read yaml
+      id: yaml-data
+      uses: jbutcher5/read-yaml@1.6
+      with:
+        file: './.travis.yml' 
+        key-path: '["runs", "using"]'
+    - name: Display read-yaml output
+      run: echo "${{ steps.yaml-data.outputs.data }}"
 
   LoadSpecFile:
     needs: [build]
