@@ -28,7 +28,7 @@ jobs:
           cd .github/workflows && ls -a
 
     - name: Reading the spec file
-      uses: Nikesh6920/demorepo/.github/workflows/readFile.yml@master
+      uses: readFile.yml@master
       with:
         gitRepo: ${{ github.repository }}
         gitBranch: ${{ github.ref }}
