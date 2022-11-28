@@ -1,7 +1,7 @@
 name: Load Spec File
 on: 
   workflow_call:
-  inputs:
+    inputs:
       gitRepo:
         required: true
         type: string
@@ -21,5 +21,7 @@ jobs:
         ref: ${{ inputs.gitBranch }}
 
     - name: Reading the spec file
-      run: ls
-    
+      run: |
+            echo "Repo Name: ${{ inputs.gitRepo }}"
+            echo "Branch Name: ${{ inputs.gitBranch }}"
+            ls
