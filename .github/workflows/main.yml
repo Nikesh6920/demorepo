@@ -25,11 +25,11 @@ jobs:
           cd .. && ls -a
           cd .github/workflows && ls -a
 
-    - name: Reading the spec file
-      uses: .github/workflows/readFile.yml@master
-      with:
-        gitRepo: ${{ github.repository }}
-        gitBranch: ${{ github.ref }}
+  LoadSpecFile:
+    uses: .github/workflows/readFile.yml@master
+    with:
+      gitRepo: ${{ github.repository }}
+      gitBranch: ${{ github.ref }}
  
            
 #    - name: Veracode Upload And Scan
