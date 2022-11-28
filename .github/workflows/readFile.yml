@@ -24,4 +24,5 @@ jobs:
       run: |
             echo "Repo Name: ${{ inputs.gitRepo }}"
             echo "Branch Name: ${{ inputs.gitBranch }}"
-            ls
+            ls -a
+            cat .travis.yml
