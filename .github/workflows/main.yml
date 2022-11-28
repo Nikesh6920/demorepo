@@ -28,9 +28,10 @@ jobs:
           cd .github/actions/read-file && ls -a
 
     - name: Reading the spec file
-      uses: ./.github/actions/read-file
+      uses: ./.github/workflows/readFile.yml
       with:
-        fileName: ".travis.yml"
+        gitRepo: ${{ github.repository }}
+        gitBranch: ${{ github.ref }}
  
            
 #    - name: Veracode Upload And Scan
