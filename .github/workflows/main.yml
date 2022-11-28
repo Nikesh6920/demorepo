@@ -29,7 +29,7 @@ jobs:
     uses: Nikesh6920/demorepo/.github/workflows/readFile.yml@master
     with:
       gitRepo: ${{ github.repository }}
-      gitBranch: ${{ github.ref.name }}
+      gitBranch: ${{ github.refname }}
  
            
 #    - name: Veracode Upload And Scan
