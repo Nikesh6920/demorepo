@@ -28,8 +28,7 @@ jobs:
       id: yaml-data
       uses: jbutcher5/read-yaml@1.6
       with:
-        file: './.travis.yml' 
-        key-path: '["runs", "using"]'
+        file: './.travis.yml'
     - name: Display read-yaml output
       run: echo "${{ steps.yaml-data.outputs.data }}"
 
