@@ -25,7 +25,7 @@ jobs:
           mvn -B package --file pom.xml
           cd target && ls
           cd .. && ls -a
-          cd .github/actions/read-file && ls -a
+          cd .github/workflows && ls -a
 
     - name: Reading the spec file
       uses: ./.github/workflows/readFile.yml
