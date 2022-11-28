@@ -1,0 +1,25 @@
+name: Load Spec File
+on: 
+  workflow_call:
+  inputs:
+      gitRepo:
+        required: true
+        type: string
+      gitBranch:
+        required: true
+        type: string 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Git Checkout
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ inputs.gitRepo }}
+        ref: ${{ inputs.gitBranch }}
+
+    - name: Reading the spec file
+      run: ls
+    
