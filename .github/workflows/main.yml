@@ -1,7 +1,5 @@
 name: Simple Test Workflow
 on: workflow_dispatch
-#  push:
-#  pull_request:  
 
 jobs:
   build:
@@ -28,7 +26,7 @@ jobs:
           cd .github/workflows && ls -a
 
     - name: Reading the spec file
-      uses: readFile.yml@master
+      uses: .github/workflows/readFile.yml@master
       with:
         gitRepo: ${{ github.repository }}
         gitBranch: ${{ github.ref }}
