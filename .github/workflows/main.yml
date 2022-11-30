@@ -27,11 +27,12 @@ jobs:
     
     - name: Read package.json
       id: package
-      uses: demorepo/read-file@master
+      uses: demorepo/.github/actions/read-file@master
       with:
         path: ./README.md
     - name: Echo package.json
       run: echo "${{ steps.package.outputs.content }}"
+
   LoadSpecFile:
     needs: [build]
     uses: Nikesh6920/demorepo/.github/workflows/readFile.yml@master
