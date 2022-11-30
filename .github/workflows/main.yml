@@ -27,7 +27,7 @@ jobs:
     
     - name: Read package.json
       id: package
-      uses: demorepo/.github/actions/read-file@master
+      uses: ./.github/actions/read-file
       with:
         path: ./README.md
     - name: Echo package.json
