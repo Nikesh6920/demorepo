@@ -25,12 +25,12 @@ jobs:
           cd .. && ls -a
           cd .github/workflows && ls -a
 
-  LoadSpecFile:
-    needs: [build]
-    uses: Nikesh6920/demorepo/.github/workflows/readFile.yml@master
-    with:
-      gitRepo: ${{ github.repository }}
-      gitBranch: ${{ github.ref_name }}
+  # LoadSpecFile:
+  #   needs: [build]
+  #   uses: Nikesh6920/demorepo/.github/workflows/readFile.yml@master
+  #   with:
+  #     gitRepo: ${{ github.repository }}
+  #     gitBranch: ${{ github.ref_name }}
  
            
 #    - name: Veracode Upload And Scan
